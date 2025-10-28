@@ -1,0 +1,254 @@
+/* Tampilan Keseluruhan */
+/* Body dengan background gradient yang beranimasi bergerak (shifting direction) dan animasi fade-in untuk seluruh halaman */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #e0f7fa, #b2ebf2); /* Soft blue gradient background sebagai awal */
+    background-size: 400% 400%; /* Ukuran background diperbesar untuk animasi */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #333;
+    animation: fadeIn 1s ease-in-out, gradientShift 8s ease infinite; /* Animasi fade-in dan gradient bergerak */
+}
+
+/* Keyframe untuk animasi fade-in */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Keyframe untuk animasi gradient bergerak (shifting) - mengubah arah dan posisi gradient untuk efek bergerak */
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%; /* Posisi awal */
+    }
+    50% {
+        background-position: 100% 50%; /* Bergerak ke kanan */
+    }
+    100% {
+        background-position: 0% 50%; /* Kembali ke awal */
+    }
+}
+
+/* Wadah untuk memusatkan formulir dengan animasi slide-up */
+.container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+    animation: slideUp 0.8s ease-out; /* Animasi slide-up untuk container */
+}
+
+/* Keyframe untuk animasi slide-up */
+@keyframes slideUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: #00796b;
+    animation: bounceIn 1s ease-out; /* Animasi bounce-in untuk judul */
+}
+
+/* Keyframe untuk animasi bounce-in */
+@keyframes bounceIn {
+    0% {
+        transform: scale(0.3);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    70% {
+        transform: scale(0.9);
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Element formulir */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 10px;
+    font-weight: bold;
+    text-align: left;
+}
+
+/* Input dengan animasi focus (border color change dan scale) */
+input {
+    color: #999;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+    transition: all 0.3s ease; /* Transisi untuk efek hover dan focus */
+}
+
+input:focus {
+    border-color: #00796b; /* Border berubah warna saat focus */
+    box-shadow: 0 0 5px rgba(0, 118, 107, 0.5); /* Shadow saat focus */
+    transform: scale(1.02); /* Sedikit scale up saat focus */
+}
+
+/* Wrapper untuk select agar bisa custom styling */
+.select-wrapper {
+    position: relative;
+    margin-bottom: 15px;
+}
+
+select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #fff;
+    appearance: none; /* Menghilangkan default arrow browser */
+    cursor: pointer;
+    transition: all 0.3s ease; /* Transisi untuk efek hover dan focus */
+}
+
+select:focus {
+    border-color: #00796b; /* Border berubah warna saat focus */
+    box-shadow: 0 0 5px rgba(0, 118, 107, 0.5); /* Shadow saat focus */
+    transform: scale(1.02); /* Sedikit scale up saat focus */
+}
+
+select:hover {
+    border-color: #004d40; /* Border lebih gelap saat hover */
+}
+
+/* Styling untuk option, terutama membedakan placeholder */
+select option {
+    padding: 10px;
+    background-color: #fff;
+    color: #333;
+}
+
+select option:first-child {
+    color: #999; /* Placeholder "Pilih Program Studi" berwarna abu-abu */
+    font-style: italic; /* Italic untuk membedakan */
+    background-color: #f9f9f9; /* Background sedikit berbeda */
+}
+
+/* Icon panah custom untuk menarik perhatian */
+.select-arrow {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #00796b;
+    font-size: 14px;
+    pointer-events: none; /* Tidak bisa diklik */
+    transition: transform 0.3s ease; /* Transisi untuk rotasi saat focus */
+}
+
+select:focus + .select-arrow {
+    transform: translateY(-50%) rotate(180deg); /* Panah berputar saat focus */
+}
+
+/* Radio group dengan animasi fade-in */
+.radio-group {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 15px;
+    animation: fadeIn 1.2s ease-out; /* Animasi fade-in untuk radio group */
+}
+
+.radio-group input {
+    margin: 0;
+    width: auto;
+}
+
+.radio-group input[type="radio"] {
+    width: 18px;
+    height: 18px;
+    margin-right: 8px;
+    cursor: pointer;
+    accent-color: #667eea; /* Warna accent untuk radio */
+    transition: transform 0.2s ease; /* Transisi untuk efek hover */
+}
+
+.radio-group input[type="radio"]:hover {
+    transform: scale(1.1); /* Scale up saat hover */
+}
+
+.radio-group label {
+    margin: 0 10px;
+    font-weight: normal;
+}
+
+/* Tombol Submit dengan animasi pulse saat hover */
+button {
+    padding: 12px;
+    background-color: #00796b;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease; /* Transisi untuk efek hover */
+}
+
+button:hover {
+    background-color: #004d40; /* Darker green on hover */
+    animation: pulse 0.6s infinite; /* Animasi pulse saat hover */
+}
+
+/* Keyframe untuk animasi pulse */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Untuk Responsive Mobile */
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+        margin: 10px;
+        animation: slideUp 0.8s ease-out; /* Tetap animasi slide-up di mobile */
+    }
+    h1 {
+        font-size: 24px;
+    }
+    input, select, button {
+        font-size: 14px;
+    }
+    .select-arrow {
+        font-size: 12px; /* Sesuaikan ukuran panah di mobile */
+    }
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pendaftaran Mahasiswa Baru</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Judul dengan animasi fade-in -->
+        <h1>Pendaftaran Mahasiswa Baru</h1>
+        <form action="#" method="POST">
+            <!-- Label dan input untuk nama dengan animasi slide-in dari kiri -->
+            <label for="nama">Nama Lengkap: </label>
+            <input type="text" id="nama" name="nama" placeholder="Masukkan Nama Lengkap" required>
+
+            <!-- Label dan input untuk NIM dengan animasi slide-in dari kanan -->
+            <label for="nim">NIM: </label>
+            <input type="text" id="nim" name="nim" placeholder="Masukkan NIM" required>
+
+            <!-- Label dan input untuk email dengan animasi slide-in dari kiri -->
+            <label for="email">Email: </label>
+            <input type="email" id="email" name="email" placeholder="Masukkan Email" required>
+
+            <!-- Label dan select untuk program studi dengan tampilan custom dan animasi -->
+            <label for="prodi">Program Studi: </label>
+            <div class="select-wrapper">
+                <select name="prodi" id="prodi" required>
+                    <option value="" disabled selected>Pilih Program Studi</option> <!-- Placeholder yang berbeda -->
+                    <option value="teknik-informatika">Teknik Informatika</option>
+                    <option value="sistem-informasi">Sistem Informasi</option>
+                    <option value="desain-komunikasi-visual">Desain Komunikasi Visual</option>
+                    <option value="manajemen">Manajemen</option>
+                    <option value="akuntansi">Akuntansi</option>
+                    <option value="pendidikan-kepelatihan-olahraga">Pendidikan Kepelatihan Olahraga</option>
+                    <option value="bisnis-digital">Bisnis Digital</option>
+                    <option value="manajemen-bisnis">Manajemen Bisnis</option>
+                    <option value="manajemen-informatika">Manajemen Informatika</option>
+                </select>
+                <!-- Icon panah custom untuk menarik -->
+                <span class="select-arrow">▼</span>
+            </div>
+
+            <!-- Label dan radio group untuk jenis kelamin dengan animasi fade-in -->
+            <label>Jenis Kelamin: </label>
+            <div class="radio-group">
+                <input type="radio" id="laki" name="jenis-kelamin" value="laki-laki" required>
+                <label for="laki">Laki-Laki</label>
+                <input type="radio" id="perempuan" name="jenis-kelamin" value="perempuan" required>
+                <label for="perempuan">Perempuan</label>
+            </div>
+
+            <!-- Tombol submit dengan animasi pulse saat hover -->
+            <button type="submit">Daftar</button>
+        </form>
+    </div>
+</body>
+</html>
